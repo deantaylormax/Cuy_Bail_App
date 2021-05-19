@@ -17,7 +17,7 @@ import plotly.express as px
 from dash.dependencies import Input, Output
 
 """ DATA AND VARIABLES """
-df = pd.read_pickle("data/bail.pkl")  #this data is already grouped by judge, charge and race and the mean is calculated for each
+df = pd.read_pickle("data/bail.pkl")
 orc_lst = orc_lst = sorted(list(set(itertools.chain.from_iterable(df.charge_orc))))
 orc_lst = [x.strip(' ') for x in orc_lst]
 orc_lst = [x for x in orc_lst if x]
