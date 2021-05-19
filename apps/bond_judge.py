@@ -15,7 +15,8 @@ import plotly.express as px
 from dash.dependencies import Input, Output
 
 """ DATA AND VARIABLES """
-df_2 = pd.read_pickle("data/bail.pkl")
+# df_2 = pd.read_pickle("data/bail.pkl")
+df_2 = pd.read_csv("data/bail.csv")
 df_2 = df_2.rename(columns={'bond_amt':'bail_amt'})
 
 judge_lst_2 = sorted(list(set(df_2.judge)))

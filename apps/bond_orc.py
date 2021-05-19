@@ -17,7 +17,8 @@ import plotly.express as px
 from dash.dependencies import Input, Output
 
 """ DATA AND VARIABLES """
-df = pd.read_pickle("data/bail.pkl")
+# df = pd.read_pickle("data/bail.pkl")
+df = pd.read_csv("data/bail.csv")
 orc_lst = orc_lst = sorted(list(set(itertools.chain.from_iterable(df.charge_orc))))
 orc_lst = [x.strip(' ') for x in orc_lst]
 orc_lst = [x for x in orc_lst if x]
