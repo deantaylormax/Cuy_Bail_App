@@ -16,19 +16,14 @@ app.layout = html.Div([
                 dbc.Row(
                     dbc.NavbarSimple(
                     children=[
-                        # dbc.NavItem(dbc.NavLink("Page 1", href="#")),
                         dbc.DropdownMenu(
                             children=[
-                                # dbc.DropdownMenuItem("More pages", header=True),
                                 dbc.DropdownMenuItem("Search by Ohio Revised Code Section", href="/apps/bond_orc"),
                                 dbc.DropdownMenuItem("Search by Judge", href="/apps/bond_judge"),
-                                # dbc.DropdownMenuItem("Master Usage", href="/apps/master_usage_plt_V2"),
-                                # dbc.DropdownMenuItem("Geo Distribution", href="/apps/geo_distribution"),
                                     ],
                             nav=True,
                             in_navbar=True,
                             label="Racial Disparities in Bail by Cuyahoga County Judges", style ={'color':'#ffffff'}
-                            # className='navbar-nav ml-auto'
                                         ),               
                             ], 
                     className = "sticky-top",
@@ -36,8 +31,7 @@ app.layout = html.Div([
                     brand_href="www.lawstata.com",
                     color="primary",
                     dark=True,
-                    # className='navbar-nav mr-auto',
-                    # sticky='top'
+                    
                                         )),
                 dbc.Row([
                         dbc.Col(),
@@ -62,4 +56,4 @@ def display_page(pathname):
         return bond_orc.layout
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(host='127.0.0.1', debug=True)
