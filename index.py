@@ -18,8 +18,8 @@ app.layout = html.Div([
                     children=[
                         dbc.DropdownMenu(
                             children=[
-                                dbc.DropdownMenuItem("Search by Ohio Revised Code Section", href="/apps/bond_orc"),
                                 dbc.DropdownMenuItem("Search by Judge", href="/apps/bond_judge"),
+                                dbc.DropdownMenuItem("Search by Ohio Revised Code Section", href="/apps/bond_orc"),
                                     ],
                             nav=True,
                             in_navbar=True,
