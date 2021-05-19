@@ -1,0 +1,29 @@
+.float-box{
+    border-radius: 27px;
+    background: #ffffff;
+    box-shadow:  7px 7px 14px #a6a6a6,
+             -7px -7px 14px #ffffff;
+
+}
+
+.navbar {
+    z-index: 1
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    color: #ffffff
+}
+
+.float-box {border-radius: 27px;
+    background: #ffffff;
+    box-shadow:  7px 7px 14px #a6a6a6,
+                 -7px -7px 14px #ffffff;}
+
+.white-float-box {border-radius: 14px;
+    background: #ffffff;
+    box-shadow:  5px 5px 13px #969696,
+                 -5px -5px 13px #ffffff;}
+
+.white-theme-font {
+    color: #ffffff
+}
