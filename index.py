@@ -8,8 +8,7 @@ pd.set_option('mode.chained_assignment', None)
 from app import server
 
 from app import app
-from apps import bond_judge, bond_orc #import all apps for entire dashboard here
-
+from apps import bond_judge, bond_orc
 #app = dash.Dash(__name__, external_stylesheets=[dbc.themes.SUPERHERO])
 
 app.layout = html.Div([

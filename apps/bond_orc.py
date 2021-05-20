@@ -17,8 +17,8 @@ import plotly.express as px
 from dash.dependencies import Input, Output
 
 """ DATA AND VARIABLES """
-# df = pd.read_pickle("data/bail.pkl")
-df = pd.read_csv("data/bail.csv")
+df = pd.read_pickle("data/bail.pkl")
+# df = pd.read_csv("data/bail.csv")
 orc_lst = orc_lst = sorted(list(set(itertools.chain.from_iterable(df.charge_orc))))
 orc_lst = [x.strip(' ') for x in orc_lst]
 orc_lst = [x for x in orc_lst if x]
@@ -30,15 +30,9 @@ from app import app
 
 charge_dropdown = dcc.Dropdown(id='charge-dd', multi=False, value=orc_options[0]['value'],options=orc_options, style={'width':'50%', 'color':'#000000'}, clearable=False)
 
-# judge_dropdown_2 = dcc.Dropdown(id='judge-dd-2', multi=False, value=judge_options[0]['value'],options=judge_options, style={'width':'50%', 'color':'#000000'}, clearable=False)
-
 bond_fig = dbc.Card(
     dbc.CardBody(
         [
-            # html.H5("PRODUCT DATA", className="card-title"),
-            
-            # html.P(id='6-graph-sub', children=""
-            # ),
             dcc.Graph(id='bond-fig', config={'displayModeBar':False}),
         ]
     ), className='float-box col-lg-9 mt-4',
@@ -48,10 +42,6 @@ bond_fig = dbc.Card(
 bond_fig_avg = dbc.Card(
     dbc.CardBody(
         [
-            # html.H5("PRODUCT DATA", className="card-title"),
-            
-            # html.P(id='6-graph-sub', children=""
-            # ),
             dcc.Graph(id='bond-fig-avg', config={'displayModeBar':False}),
         ]
     ), className='float-box col-lg-9 mt-4',
@@ -61,10 +51,6 @@ bond_fig_avg = dbc.Card(
 bond_figure_2 = dbc.Card(
     dbc.CardBody(
         [
-            # html.H5("PRODUCT DATA", className="card-title"),
-            
-            # html.P(id='6-graph-sub', children=""
-            # ),
             dcc.Graph(id='bond-fig-2', config={'displayModeBar':False}),
         ]
     ), className='float-box col-lg-9 mt-4',
@@ -74,10 +60,6 @@ bond_figure_2 = dbc.Card(
 bond_fig_avg_2 = dbc.Card(
     dbc.CardBody(
         [
-            # html.H5("PRODUCT DATA", className="card-title"),
-            
-            # html.P(id='6-graph-sub', children=""
-            # ),
             dcc.Graph(id='bond-fig-avg-2', config={'displayModeBar':False}),
         ]
     ), className='float-box col-lg-9 mt-4',
@@ -164,11 +146,11 @@ def update_orc_graph(charge1, judge1):
 
     bond_fig=px.bar(by_race,
                     text='Average Bail Amount',  #puts direct label on bar graph
-                    x='Defendant Race', y='Average Bail Amount', color="Defendant Race")
+                    x='Defendant Race', y='Average Bail Amount', color='Defendant Race')
     bond_fig.update_layout(showlegend=False)
     bond_fig_avg=px.bar(all_by_race,
                     text='Average Bail Amount',  #puts direct label on bar graph
-                    x='Defendant Race', y='Average Bail Amount', color="Defendant Race")
+                    x='Defendant Race', y='Average Bail Amount', color='Defendant Race')
     bond_fig_avg.update_layout(showlegend=False)
     bond_avg_header = f'Average Bail: {all_total_cases} cases including ORC {charge1}'
 
