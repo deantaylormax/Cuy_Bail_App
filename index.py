@@ -49,10 +49,10 @@ app.layout = html.Div([
     Output('page-content', 'children'),
     Input('url', 'pathname'))
 def display_page(pathname):
-    if pathname == '/apps/bond_judge':
-        return bond_judge.layout
-    else:
+    if pathname == '/apps/bond_orc':
         return bond_orc.layout
+    else:
+        return bond_judge.layout
 
 if __name__ == '__main__':
     app.run_server(host='127.0.0.1', debug=True)
