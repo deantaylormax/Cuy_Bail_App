@@ -109,11 +109,11 @@ layout = dbc.Container([
     Input('charge-dd', 'value'))
 def set_judge_options(charge):
     charge_lst = [charge]
-    print(f'charge is {charge}')
-    print(f'charge_lst {charge_lst}')
+    # print(f'charge is {charge}')
+    # print(f'charge_lst {charge_lst}')
     charge_choice = df[df['charge_orc'].apply(lambda x: set(x).intersection(charge_lst)).astype(bool)]
     #make the judge list now based upon those judges that have any cases involving the selected charge
-    print(f' charge_choice head {charge_choice.head()}')
+    # print(f' charge_choice head {charge_choice.head()}')
     charge_judge_lst = sorted(list(set(charge_choice['judge'])))
     for i in charge_judge_lst:
         if i == 'SHEEHAN_BJ':
@@ -134,7 +134,7 @@ def set_judge_options(charge):
 def update_orc_graph(charge1, judge1):
     charge_lst = [charge1]
     main_df = df[(df['judge'] == judge1) & (df['charge_orc'].apply(lambda x: set(x).intersection(charge_lst)).astype(bool))]
-    print(f'main df {main_df.head()}')
+    # print(f'main df {main_df.head()}')
     
     judge_cases = main_df.shape[0]
     if judge_cases == 1:
