@@ -116,7 +116,7 @@ layout = dbc.Container([
 def set_orc_options(judge):
     judge_choice = df_2[df_2['judge'] == judge]
 
-    print(judge_choice.shape)
+    # print(judge_choice.shape)
     # print(f'judge choice head {judge_choice.head()}')
     # print(f'judge is {judge}')
     if judge == 'SHEEHAN_BJ':
